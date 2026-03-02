@@ -3,367 +3,237 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Franklin Butchery — Hand-Cut Meats, Fresh Seafood & Gourmet Meals in Franklin, TN</title>
-  <meta name="description" content="The Franklin Butchery is an elevated neighborhood butcher shop in Franklin, Tennessee. Locally sourced hand-cut meats, fresh seafood, gourmet sandwiches, craft beer and wine, and chef-driven meals to go.">
-  <meta name="keywords" content="butcher shop Franklin TN, fresh meat Franklin Tennessee, local butcher, hand-cut steaks, fresh seafood, gourmet sandwiches, craft beer wine, meals to go, Bear Creek Farm, dry-aged beef, Franklin Tennessee">
+  <title>The Franklin Butchery — Coming Soon to Franklin, TN</title>
+  <meta name="description" content="The Franklin Butchery is coming soon to Franklin, Tennessee. An elevated neighborhood butcher shop with locally sourced hand-cut meats, fresh seafood, gourmet sandwiches, and chef-driven meals to go.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.franklinbutchery.com/">
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="The Franklin Butchery — Hand-Cut Meats, Fresh Seafood & Gourmet Meals">
-  <meta property="og:description" content="An elevated neighborhood butcher shop in Franklin, TN. Locally sourced hand-cut meats, fresh seafood, gourmet sandwiches, craft beer and wine, and chef-driven meals to go.">
+  <meta property="og:title" content="The Franklin Butchery — Coming Soon">
+  <meta property="og:description" content="An elevated neighborhood butcher shop coming soon to Franklin, TN.">
   <meta property="og:url" content="https://www.franklinbutchery.com/">
   <meta property="og:site_name" content="The Franklin Butchery">
   <meta property="og:image" content="https://d28f3w0x9i80nq.cloudfront.net/restaurantImages/624f5174-75dd-42da-a945-ba1e94f35303/Logo_Franklin-Butchery_Primary.png">
-  <meta property="og:locale" content="en_US">
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="The Franklin Butchery — Hand-Cut Meats, Fresh Seafood & Gourmet Meals">
-  <meta name="twitter:description" content="An elevated neighborhood butcher shop in Franklin, TN. Locally sourced hand-cut meats, fresh seafood, gourmet sandwiches, and chef-driven meals to go.">
-  <meta name="twitter:image" content="https://d28f3w0x9i80nq.cloudfront.net/restaurantImages/624f5174-75dd-42da-a945-ba1e94f35303/Logo_Franklin-Butchery_Primary.png">
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ButcherShop",
-    "name": "The Franklin Butchery",
-    "description": "An elevated neighborhood butcher shop in Franklin, Tennessee offering locally sourced hand-cut meats, fresh seafood, gourmet sandwiches, craft beer and wine, and chef-driven meals to go.",
-    "url": "https://www.franklinbutchery.com",
-    "telephone": "+1-615-721-7790",
-    "email": "family@franklinbutchery.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "129 2nd Avenue North",
-      "addressLocality": "Franklin",
-      "addressRegion": "TN",
-      "postalCode": "37064",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 35.9251,
-      "longitude": -86.8689
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-      "opens": "11:00",
-      "closes": "20:00"
-    },
-    "image": "https://d28f3w0x9i80nq.cloudfront.net/restaurantImages/624f5174-75dd-42da-a945-ba1e94f35303/Logo_Franklin-Butchery_Primary.png",
-    "priceRange": "$$",
-    "servesCuisine": "Butcher Shop",
-    "sameAs": [
-      "https://www.instagram.com/franklinbutchery/",
-      "https://www.facebook.com/profile.php?id=61576548974954"
-    ]
-  }
-  </script>
-  <!-- Favicons & Web App -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#C8A96E">
-  <meta name="msapplication-TileColor" content="#1A1A1A">
-  <meta name="theme-color" content="#C8A96E">
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --tfb-cream:       #FAF7F2;
+      --tfb-charcoal:    #1A1A1A;
+      --tfb-dark:        #111111;
+      --tfb-warm-gray:   #3D3832;
+      --tfb-mid-gray:    #7A7368;
+      --tfb-gold:        #C8A96E;
+      --tfb-gold-light:  #D4BB88;
+      --tfb-wine:        #6B2D3E;
+      --tfb-white:       #FFFFFF;
+      --tfb-serif:       'Georgia', 'Times New Roman', serif;
+      --tfb-sans:        'Helvetica Neue', 'Arial', sans-serif;
+    }
+
+    body {
+      font-family: var(--tfb-sans);
+      color: var(--tfb-cream);
+      background: var(--tfb-dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Film grain overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      z-index: 10;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 200px 200px;
+    }
+
+    /* Subtle gold line at top */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--tfb-gold), transparent);
+      z-index: 11;
+    }
+
+    .coming-soon {
+      position: relative;
+      z-index: 5;
+      max-width: 600px;
+    }
+
+    .logo-container {
+      margin-bottom: 3rem;
+    }
+
+    .logo-container img {
+      width: 280px;
+      max-width: 80vw;
+      height: auto;
+      opacity: 0.95;
+    }
+
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: var(--tfb-gold);
+      margin: 0 auto 2rem;
+    }
+
+    h1 {
+      font-family: var(--tfb-serif);
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--tfb-cream);
+      margin-bottom: 1.5rem;
+    }
+
+    .tagline {
+      font-family: var(--tfb-serif);
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: var(--tfb-gold);
+      font-style: italic;
+      margin-bottom: 2rem;
+      letter-spacing: 0.05em;
+    }
+
+    .description {
+      font-size: 0.95rem;
+      color: var(--tfb-mid-gray);
+      line-height: 1.8;
+      margin-bottom: 3rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .details {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 3rem;
+    }
+
+    .details a,
+    .details span {
+      font-size: 0.9rem;
+      color: var(--tfb-cream);
+      opacity: 0.7;
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      transition: opacity 0.3s ease;
+    }
+
+    .details a:hover {
+      opacity: 1;
+      color: var(--tfb-gold);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+
+    .social-links a {
+      color: var(--tfb-mid-gray);
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: var(--tfb-gold);
+    }
+
+    footer {
+      position: fixed;
+      bottom: 2rem;
+      left: 0; right: 0;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--tfb-warm-gray);
+      letter-spacing: 0.1em;
+      z-index: 5;
+    }
+
+    /* Fade in animation */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .coming-soon > * {
+      animation: fadeUp 0.8s ease-out both;
+    }
+    .logo-container { animation-delay: 0.1s; }
+    .divider { animation-delay: 0.3s; }
+    h1 { animation-delay: 0.5s; }
+    .tagline { animation-delay: 0.7s; }
+    .description { animation-delay: 0.9s; }
+    .details { animation-delay: 1.1s; }
+    .social-links { animation-delay: 1.3s; }
+  </style>
 </head>
 <body>
 
-<!-- Scroll Progress -->
-<div id="tfb-scroll-progress" aria-hidden="true"></div>
-
-<!-- Navigation -->
-<nav id="tfb-mini-nav" aria-label="Main navigation">
-  <div class="tfb-nav-inner">
-    <a href="index.html" class="tfb-nav-logo" aria-label="Home">
-      <img src="https://d28f3w0x9i80nq.cloudfront.net/restaurantImages/624f5174-75dd-42da-a945-ba1e94f35303/Logo_Franklin-Butchery_Primary.png" alt="The Franklin Butchery">
-    </a>
-    <div class="tfb-nav-links">
-      <a href="butcher-case.html" class="tfb-nav-pill">Butcher Case</a>
-      <a href="seafood.html" class="tfb-nav-pill">Seafood</a>
-      <a href="sandwiches.html" class="tfb-nav-pill">Sandwiches</a>
-      <a href="beer-wine.html" class="tfb-nav-pill">Beer &amp; Wine</a>
-      <a href="meals-to-go.html" class="tfb-nav-pill">Meals To Go</a>
-      <a href="merch.html" class="tfb-nav-pill">Merch</a>
-      <a href="contact.html" class="tfb-nav-drawer-cta">Contact Us</a>
+  <div class="coming-soon">
+    <div class="logo-container">
+      <img src="images/logo-tan.png" alt="The Franklin Butchery">
     </div>
-    <a href="contact.html" class="tfb-nav-contact">Contact Us</a>
-    <button class="tfb-hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-<div class="tfb-nav-overlay"></div>
 
-<!-- 1. HERO SLIDER -->
-<div class="tfb-hero" role="region" aria-label="Featured highlights" aria-roledescription="carousel">
-  <div class="tfb-hero__slide tfb-active" role="group" aria-roledescription="slide" aria-label="Slide 1 of 3">
-    <div class="tfb-hero__bg" style="background-image: var(--tfb-hero-1);"></div>
-    <div class="tfb-hero__overlay"></div>
-    <div class="tfb-hero__content">
-      <div class="tfb-hero__crest"><img src="https://d28f3w0x9i80nq.cloudfront.net/restaurantImages/624f5174-75dd-42da-a945-ba1e94f35303/Logo_Franklin-Butchery_Primary.png" alt="The Franklin Butchery crest"></div>
-      <h1 class="tfb-hero__headline">Where the Case<br>Is the Menu</h1>
-      <p class="tfb-hero__sub">Locally sourced hand-cut meats + fresh-forward seafood picked for tonight.</p>
-      <a href="butcher-case.html" class="tfb-hero__cta">Explore the Experience</a>
-    </div>
-  </div>
-  <div class="tfb-hero__slide" role="group" aria-roledescription="slide" aria-label="Slide 2 of 3">
-    <div class="tfb-hero__bg" style="background-image: var(--tfb-hero-2);"></div>
-    <div class="tfb-hero__overlay"></div>
-    <div class="tfb-hero__content">
-      <div class="tfb-hero__crest"><img src="https://d28f3w0x9i80nq.cloudfront.net/restaurantImages/624f5174-75dd-42da-a945-ba1e94f35303/Logo_Franklin-Butchery_Primary.png" alt="The Franklin Butchery crest"></div>
-      <h2 class="tfb-hero__headline">Upgrade Your<br>Lunch Game</h2>
-      <p class="tfb-hero__sub">Gourmet sandwiches plus beer &amp; wine to match.</p>
-      <a href="sandwiches.html" class="tfb-hero__cta">See the Menu</a>
-    </div>
-  </div>
-  <div class="tfb-hero__slide" role="group" aria-roledescription="slide" aria-label="Slide 3 of 3">
-    <div class="tfb-hero__bg" style="background-image: var(--tfb-hero-3);"></div>
-    <div class="tfb-hero__overlay"></div>
-    <div class="tfb-hero__content">
-      <div class="tfb-hero__crest"><img src="https://d28f3w0x9i80nq.cloudfront.net/restaurantImages/624f5174-75dd-42da-a945-ba1e94f35303/Logo_Franklin-Butchery_Primary.png" alt="The Franklin Butchery crest"></div>
-      <h2 class="tfb-hero__headline">Chef-Driven<br>Meals, To-Go</h2>
-      <p class="tfb-hero__sub">Prepared fresh and ready when you are.</p>
-      <a href="meals-to-go.html" class="tfb-hero__cta">Learn More</a>
-    </div>
-  </div>
-  <button class="tfb-hero__arrow tfb-hero__arrow--prev" aria-label="Previous slide">&#8249;</button>
-  <button class="tfb-hero__arrow tfb-hero__arrow--next" aria-label="Next slide">&#8250;</button>
-  <div class="tfb-hero__dots" role="tablist" aria-label="Slide controls">
-    <button class="tfb-hero__dot tfb-active" role="tab" aria-selected="true" aria-label="Go to slide 1"></button>
-    <button class="tfb-hero__dot" role="tab" aria-selected="false" aria-label="Go to slide 2"></button>
-    <button class="tfb-hero__dot" role="tab" aria-selected="false" aria-label="Go to slide 3"></button>
-  </div>
-</div>
-<div class="tfb-hero-spacer"></div>
+    <div class="divider"></div>
 
-<div class="tfb-hero__shield" aria-hidden="true">
-  <svg viewBox="0 0 100 30" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M62.4,24.2c-3.8,1.9-8.1,3.8-12.4,3.8h0c-4.3,0-8.6-2-12.4-3.8C25.1,18.1,12.2,12.5,0,5.8v24.2h100V5.8c-12.2,6.7-25.1,12.3-37.6,18.4Z" fill="#FAF7F2"/>
-  </svg>
-</div>
+    <h1>Coming Soon</h1>
 
-<div class="tfb-main-content">
+    <p class="tagline">An elevated neighborhood butcher shop</p>
 
-<!-- 2. BRAND ETHOS -->
-<div id="tfb-ethos" class="tfb-ethos">
-  <div class="tfb-ethos__inner">
-    <div class="tfb-divider tfb-reveal"></div>
-    <h2 class="tfb-ethos__headline tfb-reveal">Rooted in Care.<br>Built on Craft.</h2>
-    <p class="tfb-ethos__body tfb-reveal">
-      The Franklin Butchery is a family-owned neighborhood butcher shop in the heart of Franklin, Tennessee. Every cut is hand-selected, every meal is made with intention, and every visit feels like home.
+    <p class="description">
+      Hand-cut meats. Fresh seafood. Gourmet sandwiches. Craft beer &amp; wine.
+      Chef-driven meals to go. All locally sourced with the care and quality
+      Franklin deserves.
     </p>
-  </div>
-  <div class="tfb-ethos-cards">
-    <div class="tfb-ethos-card tfb-reveal tfb-delay-1">
-      <div class="tfb-ethos-card__icon">
-        <img src="assets/cow.svg" alt="Cow icon representing care" style="width: 100%; height: 100%;">
-      </div>
-      <h3 class="tfb-ethos-card__title">Rooted in Care</h3>
-      <p class="tfb-ethos-card__text">Our beef and pork come from Bear Creek Farm, raised with humane handling and pasture-first practices you can trust.</p>
+
+    <div class="details">
+      <span>129 2nd Avenue North &middot; Franklin, TN 37064</span>
+      <a href="mailto:family@franklinbutchery.com">family@franklinbutchery.com</a>
+      <a href="tel:+16157217790">(615) 721-7790</a>
     </div>
-    <div class="tfb-ethos-card tfb-reveal tfb-delay-2">
-      <div class="tfb-ethos-card__icon">
-        <img src="assets/fish.svg" alt="Fish icon representing fresh seafood" style="width: 100%; height: 100%;">
-      </div>
-      <h3 class="tfb-ethos-card__title">Fresh, Never Frozen</h3>
-      <p class="tfb-ethos-card__text">We source fresh-forward seafood that rotates with the seasons. What you see on the ice is what just came in.</p>
-    </div>
-    <div class="tfb-ethos-card tfb-reveal tfb-delay-3">
-      <div class="tfb-ethos-card__icon">
-        <img src="assets/family.svg" alt="Family icon" style="width: 100%; height: 100%;">
-      </div>
-      <h3 class="tfb-ethos-card__title">Family Owned</h3>
-      <p class="tfb-ethos-card__text">Built by a family who believes in doing things the right way. With care, transparency, and a deep love for this community.</p>
-    </div>
-    <div class="tfb-ethos-card tfb-reveal tfb-delay-4">
-      <div class="tfb-ethos-card__icon">
-        <img src="assets/craft.svg" alt="Craft icon representing hand-cut quality" style="width: 100%; height: 100%;">
-      </div>
-      <h3 class="tfb-ethos-card__title">Crafted by Hand</h3>
-      <p class="tfb-ethos-card__text">Every cut is trimmed and prepared by our in-house butchers in our glass cut room. No shortcuts, no compromises.</p>
+
+    <div class="social-links">
+      <a href="https://www.instagram.com/thefranklinbutchery/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/thefranklinbutchery/" target="_blank" rel="noopener">Facebook</a>
     </div>
   </div>
-</div>
 
-<!-- 3. EXPLORE PILLAR CARDS -->
-<div id="tfb-explore" class="tfb-pillars">
-  <div class="tfb-pillars__inner">
-    <p class="tfb-section__eyebrow tfb-reveal">Explore the Full</p>
-    <h2 class="tfb-section__title tfb-reveal">Elevated Experience</h2>
-    <div class="tfb-pillars__grid">
-      <a href="butcher-case.html" class="tfb-pillar tfb-reveal tfb-delay-1">
-        <img class="tfb-pillar__img" src="https://d28f3w0x9i80nq.cloudfront.net/restaurantImages/624f5174-75dd-42da-a945-ba1e94f35303/steaks1.jpg" alt="Hand-cut meats in the butcher case" loading="lazy">
-        <div class="tfb-pillar__overlay"></div>
-        <span class="tfb-pillar__label">The Butcher Case</span>
-      </a>
-      <a href="seafood.html" class="tfb-pillar tfb-reveal tfb-delay-2">
-        <img class="tfb-pillar__img" src="https://d28f3w0x9i80nq.cloudfront.net/restaurantImages/624f5174-75dd-42da-a945-ba1e94f35303/seafood.jpg" alt="Fresh-forward seafood selection" loading="lazy">
-        <div class="tfb-pillar__overlay"></div>
-        <span class="tfb-pillar__label">Fresh Seafood</span>
-      </a>
-      <a href="sandwiches.html" class="tfb-pillar tfb-reveal tfb-delay-3">
-        <img class="tfb-pillar__img" src="https://d28f3w0x9i80nq.cloudfront.net/restaurantImages/624f5174-75dd-42da-a945-ba1e94f35303/sandwhich.jpg" alt="Gourmet sandwich" loading="lazy">
-        <div class="tfb-pillar__overlay"></div>
-        <span class="tfb-pillar__label">Gourmet Sandwiches</span>
-      </a>
-      <a href="beer-wine.html" class="tfb-pillar tfb-reveal tfb-delay-4">
-        <img class="tfb-pillar__img" src="https://d28f3w0x9i80nq.cloudfront.net/restaurantImages/624f5174-75dd-42da-a945-ba1e94f35303/beer_wine.jpg" alt="Curated craft beer and wine" loading="lazy">
-        <div class="tfb-pillar__overlay"></div>
-        <span class="tfb-pillar__label">Craft Beer &amp; Wine</span>
-      </a>
-    </div>
-  </div>
-</div>
+  <footer>
+    &copy; 2026 The Franklin Butchery. All rights reserved.
+  </footer>
 
-<!-- 4. MEALS TO GO (light) -->
-<div id="tfb-meals" class="tfb-section">
-  <div class="tfb-split tfb-split--reverse tfb-reveal">
-    <div class="tfb-split__text">
-      <p class="tfb-split__eyebrow">Meals To Go</p>
-      <h2 class="tfb-split__heading">Chef-Driven.<br>Ready When<br>You Are.</h2>
-      <p class="tfb-split__body">
-        Our refrigerated meals are prepared fresh by our kitchen team, designed to reheat beautifully at home. From family-ready proteins to complete entr&eacute;es, these are the kind of meals that make a weeknight feel effortless and a little more special.
-      </p>
-      <a href="meals-to-go.html" class="tfb-btn">Browse Meals</a>
-    </div>
-    <div class="tfb-split__media">
-      <img src="https://d28f3w0x9i80nq.cloudfront.net/restaurantImages/624f5174-75dd-42da-a945-ba1e94f35303/openartimage_AFRMYQA_1770510341334_raw.jpg" alt="Chef-prepared meal ready to reheat" loading="lazy">
-    </div>
-  </div>
-</div>
-
-<!-- 5. MEET THE TEAM (dark) -->
-<div id="tfb-team" class="tfb-section tfb-section--full tfb-section--dark">
-  <div class="tfb-section" style="padding-top: 0; padding-bottom: 0;">
-    <div class="tfb-split tfb-reveal">
-      <div class="tfb-split__text">
-        <p class="tfb-split__eyebrow">Meet the Team</p>
-        <h2 class="tfb-split__heading">The Craft Behind<br>the Case.</h2>
-        <p class="tfb-split__body">
-          A butcher who cuts by hand. A chef who cooks from scratch. Carlos and Greg bring years of craft and care to everything in the case, backed by the Salaber and Tirado families who believed Franklin deserved something special.
-        </p>
-        <a href="team.html" class="tfb-btn tfb-btn--light">Meet the Team</a>
-      </div>
-      <div class="tfb-split__media">
-        <img src="images/thb_crew.jpg" alt="The Salaber and Tirado families" loading="lazy">
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- 6. PRIVATE DINING & EVENTS -->
-<div id="tfb-events" class="tfb-events">
-  <div class="tfb-events__inner tfb-reveal">
-    <div class="tfb-divider" style="background: var(--tfb-gold);"></div>
-    <p class="tfb-section__eyebrow">Private Dining &amp; Events</p>
-    <h2 class="tfb-section__title">Gather Around<br>Something Special</h2>
-    <p class="tfb-section__desc" style="margin-bottom: 40px;">
-      Looking for a unique space for your next gathering? Whether it&rsquo;s a birthday dinner, corporate event, or an intimate evening with friends, we&rsquo;d love to hear what you have in mind. Our team will work with you to create a memorable experience built around exceptional food and warm hospitality.
-    </p>
-    <button class="tfb-btn" id="tfb-inquire-open" type="button">Inquire</button>
-  </div>
-</div>
-
-<!-- INQUIRY SLIDE-OUT PANEL -->
-<div class="tfb-inquiry-overlay" id="tfb-inquiry-overlay"></div>
-<aside class="tfb-inquiry-panel" id="tfb-inquiry-panel" aria-label="Event inquiry form">
-
-  <!-- Form State -->
-  <div class="tfb-inquiry-form-wrap" id="tfb-inquiry-form-wrap">
-    <div class="tfb-divider" style="margin: 0 0 24px;"></div>
-    <div class="tfb-inquiry-header">
-      <h2 class="tfb-inquiry-heading">Let&rsquo;s Plan Something</h2>
-      <button class="tfb-inquiry-close" id="tfb-inquiry-close" aria-label="Close inquiry form" type="button">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </button>
-    </div>
-    <p class="tfb-inquiry-sub">Tell us about your event and we&rsquo;ll be in touch to start building the details.</p>
-
-    <form class="tfb-inquiry-form" id="tfb-inquiry-form" action="https://formsubmit.co/family@franklinbutchery.com" method="POST">
-      <input type="hidden" name="_subject" value="Private Dining Inquiry from The Franklin Butchery website">
-      <input type="hidden" name="_captcha" value="true">
-      <input type="hidden" name="_next" value="">
-      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-
-      <div class="tfb-inquiry-row">
-        <div class="tfb-form-group">
-          <label class="tfb-form-label" for="tfb-inq-first">First Name</label>
-          <input class="tfb-form-input" type="text" id="tfb-inq-first" name="first_name" required autocomplete="given-name">
-        </div>
-        <div class="tfb-form-group">
-          <label class="tfb-form-label" for="tfb-inq-last">Last Name</label>
-          <input class="tfb-form-input" type="text" id="tfb-inq-last" name="last_name" required autocomplete="family-name">
-        </div>
-      </div>
-
-      <div class="tfb-form-group">
-        <label class="tfb-form-label" for="tfb-inq-email">Email Address</label>
-        <input class="tfb-form-input" type="email" id="tfb-inq-email" name="email" required autocomplete="email">
-      </div>
-
-      <div class="tfb-inquiry-row">
-        <div class="tfb-form-group">
-          <label class="tfb-form-label" for="tfb-inq-phone">Phone<br><span style="color: var(--tfb-light-gray); font-weight: 300;">(optional)</span></label>
-          <input class="tfb-form-input" type="tel" id="tfb-inq-phone" name="phone" autocomplete="tel">
-        </div>
-        <div class="tfb-form-group">
-          <label class="tfb-form-label" for="tfb-inq-date">Preferred Date <span style="color: var(--tfb-light-gray); font-weight: 300;">(optional)</span></label>
-          <input class="tfb-form-input" type="date" id="tfb-inq-date" name="event_date">
-        </div>
-      </div>
-
-      <div class="tfb-form-group">
-        <label class="tfb-form-label" for="tfb-inq-message">Tell Us About Your Event</label>
-        <textarea class="tfb-form-input tfb-form-textarea" id="tfb-inq-message" name="message" rows="5" required placeholder="Headcount, occasion, any special requests&hellip;"></textarea>
-      </div>
-
-      <button class="tfb-btn tfb-inquiry-submit" type="submit">Send Inquiry</button>
-    </form>
-  </div>
-
-  <!-- Success State -->
-  <div class="tfb-inquiry-success" id="tfb-inquiry-success">
-    <div class="tfb-divider" style="margin: 0 auto 28px;"></div>
-    <h2 class="tfb-inquiry-heading" style="text-align: center;">We&rsquo;d Love to<br>Host You</h2>
-    <p class="tfb-inquiry-sub" style="text-align: center; max-width: none;">Thank you for your inquiry. Our team will review the details and reach out soon to start planning something memorable together.</p>
-    <div style="text-align: center; margin-top: 32px;">
-      <button class="tfb-btn" id="tfb-inquiry-done" type="button">Close</button>
-    </div>
-  </div>
-</aside>
-
-<!-- FOOTER -->
-<footer class="tfb-footer">
-  <div class="tfb-footer__inner">
-    <a href="index.html" class="tfb-footer__brand"><img src="images/tfb_logo_horizontal.png" alt="The Franklin Butchery" class="tfb-footer__logo"></a>
-    <address class="tfb-footer__address">
-      129 2nd Avenue North<br>
-      Franklin, TN 37064<br>
-      <a href="tel:+16157217790" style="color: inherit; text-decoration: none;">(615) 721-7790</a>
-    </address>
-    <p class="tfb-footer__hours">Open Daily | 11 AM &ndash; 8 PM</p>
-    <ul class="tfb-footer__social">
-      <li><a href="https://www.instagram.com/franklinbutchery/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-      <li><a href="https://www.facebook.com/profile.php?id=61576548974954" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-    </ul>
-    <div class="tfb-footer__email-signup">
-      <label class="tfb-footer__email-label" for="tfb-email-input">Join Our List</label>
-      <form class="tfb-footer__email-form" onsubmit="return false;">
-        <input id="tfb-email-input" class="tfb-footer__email-input" type="email" placeholder="your@email.com" aria-label="Email address">
-        <button class="tfb-footer__email-btn" type="submit">Join</button>
-      </form>
-    </div>
-    <p class="tfb-footer__copy">&copy; 2026 The Franklin Butchery. All rights reserved.</p>
-  </div>
-</footer>
-
-</div><!-- /.tfb-main-content -->
-
-<script src="js/main.js"></script>
 </body>
 </html>
