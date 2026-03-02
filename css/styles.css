@@ -23,8 +23,8 @@ html, body {
   --tfb-cream:       #FAF7F2;
   --tfb-offwhite:    #F5F0EA;
   --tfb-warm-beige:  #EDE8E0;
-  --tfb-charcoal:    #1A1A1A;
-  --tfb-dark:        #111111;
+  --tfb-charcoal:    #1D283E;
+  --tfb-dark:        #161F30;
   --tfb-warm-gray:   #3D3832;
   --tfb-mid-gray:    #7A7368;
   --tfb-light-gray:  #B8B2A8;
@@ -123,7 +123,7 @@ body::before {
   left: 0;
   right: 0;
   z-index: 9998;
-  background: rgba(26, 26, 26, 0.95);
+  background: rgba(29, 40, 62, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(200, 169, 110, 0.15);
@@ -1688,7 +1688,7 @@ body::before {
     right: 0;
     width: 280px;
     height: 100vh;
-    background: rgba(26, 26, 26, 0.98);
+    background: rgba(29, 40, 62, 0.98);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     flex-direction: column;

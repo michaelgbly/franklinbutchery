@@ -12,3 +12,6 @@ Thumbs.db
 # CDN cache
 cdn-cache/
 Franklin Butchery/
+
+# Preview tools (local only)
+preview-responsive.html
