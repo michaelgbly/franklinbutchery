@@ -171,6 +171,98 @@
       color: var(--tfb-gold);
     }
 
+    /* Email subscribe form */
+    .subscribe-section {
+      margin-bottom: 3rem;
+      animation: fadeUp 0.8s ease-out both;
+      animation-delay: 1.5s;
+    }
+
+    .subscribe-section h2 {
+      font-family: var(--tfb-serif);
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--tfb-gold);
+      margin-bottom: 1rem;
+    }
+
+    .subscribe-form {
+      display: flex;
+      gap: 0;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .subscribe-form input[type="email"] {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      font-family: var(--tfb-sans);
+      font-size: 0.9rem;
+      color: var(--tfb-cream);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(200, 169, 110, 0.3);
+      border-right: none;
+      border-radius: 2px 0 0 2px;
+      outline: none;
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .subscribe-form input[type="email"]::placeholder {
+      color: var(--tfb-mid-gray);
+      font-size: 0.85rem;
+      letter-spacing: 0.03em;
+    }
+
+    .subscribe-form input[type="email"]:focus {
+      border-color: var(--tfb-gold);
+      background: rgba(255, 255, 255, 0.09);
+    }
+
+    .subscribe-form input[type="submit"] {
+      padding: 0.75rem 1.5rem;
+      font-family: var(--tfb-sans);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--tfb-dark);
+      background: var(--tfb-gold);
+      border: 1px solid var(--tfb-gold);
+      border-radius: 0 2px 2px 0;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .subscribe-form input[type="submit"]:hover {
+      background: var(--tfb-gold-light);
+    }
+
+    /* Hide Mailchimp extras */
+    #mc_embed_signup .indicates-required,
+    #mc_embed_signup .mc-field-group label,
+    #mce-responses {
+      position: absolute;
+      left: -9999px;
+      height: 0;
+      overflow: hidden;
+    }
+
+    @media (max-width: 480px) {
+      .subscribe-form {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .subscribe-form input[type="email"] {
+        border-right: 1px solid rgba(200, 169, 110, 0.3);
+        border-radius: 2px;
+      }
+      .subscribe-form input[type="submit"] {
+        border-radius: 2px;
+      }
+    }
+
     footer {
       position: fixed;
       bottom: 2rem;
@@ -228,6 +320,27 @@
     <div class="social-links">
       <a href="https://www.instagram.com/thefranklinbutchery/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.facebook.com/thefranklinbutchery/" target="_blank" rel="noopener">Facebook</a>
+    </div>
+
+    <div class="subscribe-section">
+      <h2>Stay in the Know</h2>
+      <div id="mc_embed_shell">
+        <div id="mc_embed_signup">
+          <form action="https://franklinbutchery.us14.list-manage.com/subscribe/post?u=04cfa54c9a9df02deb8c615a5&amp;id=2e99f601e4&amp;f_id=00359ce1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate subscribe-form" target="_self" novalidate="">
+            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+            <div class="mc-field-group">
+              <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+              <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="" placeholder="Your email address">
+            </div>
+            <div id="mce-responses" class="clear">
+              <div class="response" id="mce-error-response" style="display: none;"></div>
+              <div class="response" id="mce-success-response" style="display: none;"></div>
+            </div>
+            <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_04cfa54c9a9df02deb8c615a5_2e99f601e4" tabindex="-1" value=""></div>
+            <input type="submit" name="subscribe" id="mc-embedded-subscribe" value="Subscribe">
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 
