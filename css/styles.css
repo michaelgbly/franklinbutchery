@@ -21,18 +21,6 @@ html {
   background: #1D283E;
   overscroll-behavior-y: none;
 }
-/* iOS Safari safe-area cover — solid navy bar behind status bar */
-html::before {
-  content: '';
-  position: fixed;
-  top: -50px;
-  left: 0;
-  right: 0;
-  height: calc(50px + env(safe-area-inset-top, 0px));
-  background: #1D283E;
-  z-index: 10001;
-  pointer-events: none;
-}
 
 /* ── Brand Tokens ── */
 :root {
