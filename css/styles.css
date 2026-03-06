@@ -141,6 +141,7 @@ body::before {
   top: -100px;
   bottom: 0;
   background: #1D283E;
+  z-index: -1;
 }
 #tfb-mini-nav .tfb-nav-inner {
   max-width: 1200px;
