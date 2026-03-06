@@ -37,8 +37,8 @@ html, body {
   --tfb-serif:       'Georgia', 'Times New Roman', serif;
   --tfb-sans:        'Helvetica Neue', 'Arial', sans-serif;
 
-  --tfb-hero-1:      url('https://d28f3w0x9i80nq.cloudfront.net/restaurantImages/624f5174-75dd-42da-a945-ba1e94f35303/butcher_case_hero.jpg');
-  --tfb-hero-2:      url('https://d28f3w0x9i80nq.cloudfront.net/restaurantImages/624f5174-75dd-42da-a945-ba1e94f35303/sandwhich.jpg');
+  --tfb-hero-1:      url('../images/TFB_SaltRoom.jpg');
+  --tfb-hero-2:      url('../images/TFB_Sandwich2.jpg');
   --tfb-hero-3:      url('https://d28f3w0x9i80nq.cloudfront.net/restaurantImages/624f5174-75dd-42da-a945-ba1e94f35303/openartimage_AFRMYQA_1770510341334_raw.jpg');
 }
 
