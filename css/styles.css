@@ -1121,6 +1121,15 @@ body::before {
   column-gap: 64px;
   text-align: left;
 }
+.tfb-merch-coming-soon {
+  font-family: var(--tfb-serif);
+  font-size: 15px;
+  font-style: italic;
+  color: var(--tfb-mid-gray);
+  text-align: left;
+  padding: 24px 0;
+  letter-spacing: 0.02em;
+}
 .tfb-product-list li {
   font-family: var(--tfb-serif);
   font-size: 15px;
