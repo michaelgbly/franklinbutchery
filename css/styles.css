@@ -19,12 +19,7 @@ html, body {
 }
 html {
   background: #1D283E;
-}
-/* Prevent iOS Safari overscroll bounce showing content above nav */
-@supports (-webkit-touch-callout: none) {
-  html, body {
-    overscroll-behavior-y: none;
-  }
+  overscroll-behavior-y: none;
 }
 
 /* ── Brand Tokens ── */
@@ -143,10 +138,9 @@ body::before {
   position: absolute;
   left: 0;
   right: 0;
-  top: calc(-1 * env(safe-area-inset-top, 0px));
-  height: calc(100% + env(safe-area-inset-top, 0px));
+  top: -100px;
+  bottom: 0;
   background: #1D283E;
-  z-index: -1;
 }
 #tfb-mini-nav .tfb-nav-inner {
   max-width: 1200px;
@@ -339,6 +333,7 @@ body::before {
   background: var(--tfb-dark);
   padding-top: calc(60px + env(safe-area-inset-top, 0px));
   z-index: 1;
+  clip-path: inset(env(safe-area-inset-top, 0px) 0 0 0);
 }
 /* Spacer pushes content below the fixed hero */
 .tfb-hero-spacer {
