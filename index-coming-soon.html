@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Franklin Butchery — Coming Soon to Franklin, TN</title>
+  <meta name="description" content="The Franklin Butchery is coming soon to Franklin, Tennessee. An elevated neighborhood butcher shop with locally sourced hand-cut meats, fresh seafood, gourmet sandwiches, and chef-driven meals to go.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.franklinbutchery.com/">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The Franklin Butchery — Coming Soon">
+  <meta property="og:description" content="An elevated neighborhood butcher shop coming soon to Franklin, TN.">
+  <meta property="og:url" content="https://www.franklinbutchery.com/">
+  <meta property="og:site_name" content="The Franklin Butchery">
+  <meta property="og:image" content="https://d28f3w0x9i80nq.cloudfront.net/restaurantImages/624f5174-75dd-42da-a945-ba1e94f35303/Logo_Franklin-Butchery_Primary.png">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --tfb-cream:       #FAF7F2;
+      --tfb-charcoal:    #1D283E;
+      --tfb-dark:        #161F30;
+      --tfb-warm-gray:   #3D3832;
+      --tfb-mid-gray:    #7A7368;
+      --tfb-gold:        #C8A96E;
+      --tfb-gold-light:  #D4BB88;
+      --tfb-wine:        #6B2D3E;
+      --tfb-white:       #FFFFFF;
+      --tfb-serif:       'Georgia', 'Times New Roman', serif;
+      --tfb-sans:        'Helvetica Neue', 'Arial', sans-serif;
+    }
+
+    body {
+      font-family: var(--tfb-sans);
+      color: var(--tfb-cream);
+      background: var(--tfb-dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Film grain overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      z-index: 10;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 200px 200px;
+    }
+
+    /* Subtle gold line at top */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--tfb-gold), transparent);
+      z-index: 11;
+    }
+
+    .coming-soon {
+      position: relative;
+      z-index: 5;
+      max-width: 600px;
+    }
+
+    .logo-container {
+      margin-bottom: 3rem;
+    }
+
+    .logo-container img {
+      width: 280px;
+      max-width: 80vw;
+      height: auto;
+      opacity: 0.95;
+    }
+
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: var(--tfb-gold);
+      margin: 0 auto 2rem;
+    }
+
+    h1 {
+      font-family: var(--tfb-serif);
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--tfb-cream);
+      margin-bottom: 1.5rem;
+    }
+
+    .tagline {
+      font-family: var(--tfb-serif);
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: var(--tfb-gold);
+      font-style: italic;
+      margin-bottom: 2rem;
+      letter-spacing: 0.05em;
+    }
+
+    .description {
+      font-size: 0.95rem;
+      color: var(--tfb-mid-gray);
+      line-height: 1.8;
+      margin-bottom: 3rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .details {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 3rem;
+    }
+
+    .details a,
+    .details span {
+      font-size: 0.9rem;
+      color: var(--tfb-cream);
+      opacity: 0.7;
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      transition: opacity 0.3s ease;
+    }
+
+    .details a:hover {
+      opacity: 1;
+      color: var(--tfb-gold);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+
+    .social-links a {
+      color: var(--tfb-mid-gray);
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: var(--tfb-gold);
+    }
+
+    /* Email subscribe form */
+    .subscribe-section {
+      margin-bottom: 3rem;
+      animation: fadeUp 0.8s ease-out both;
+      animation-delay: 1.5s;
+    }
+
+    .subscribe-section h2 {
+      font-family: var(--tfb-serif);
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--tfb-gold);
+      margin-bottom: 1rem;
+    }
+
+    .subscribe-form {
+      display: flex;
+      gap: 0;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .subscribe-form input[type="email"] {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      font-family: var(--tfb-sans);
+      font-size: 0.9rem;
+      color: var(--tfb-cream);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(200, 169, 110, 0.3);
+      border-right: none;
+      border-radius: 2px 0 0 2px;
+      outline: none;
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .subscribe-form input[type="email"]::placeholder {
+      color: var(--tfb-mid-gray);
+      font-size: 0.85rem;
+      letter-spacing: 0.03em;
+    }
+
+    .subscribe-form input[type="email"]:focus {
+      border-color: var(--tfb-gold);
+      background: rgba(255, 255, 255, 0.09);
+    }
+
+    .subscribe-form input[type="submit"] {
+      padding: 0.75rem 1.5rem;
+      font-family: var(--tfb-sans);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--tfb-dark);
+      background: var(--tfb-gold);
+      border: 1px solid var(--tfb-gold);
+      border-radius: 0 2px 2px 0;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .subscribe-form input[type="submit"]:hover {
+      background: var(--tfb-gold-light);
+    }
+
+    /* Hide Mailchimp extras */
+    #mc_embed_signup .indicates-required,
+    #mc_embed_signup .mc-field-group label,
+    #mce-responses {
+      position: absolute;
+      left: -9999px;
+      height: 0;
+      overflow: hidden;
+    }
+
+    @media (max-width: 480px) {
+      .subscribe-form {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .subscribe-form input[type="email"] {
+        border-right: 1px solid rgba(200, 169, 110, 0.3);
+        border-radius: 2px;
+      }
+      .subscribe-form input[type="submit"] {
+        border-radius: 2px;
+      }
+    }
+
+    footer {
+      position: fixed;
+      bottom: 2rem;
+      left: 0; right: 0;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--tfb-warm-gray);
+      letter-spacing: 0.1em;
+      z-index: 5;
+    }
+
+    /* Fade in animation */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .coming-soon > * {
+      animation: fadeUp 0.8s ease-out both;
+    }
+    .logo-container { animation-delay: 0.1s; }
+    .divider { animation-delay: 0.3s; }
+    h1 { animation-delay: 0.5s; }
+    .tagline { animation-delay: 0.7s; }
+    .description { animation-delay: 0.9s; }
+    .details { animation-delay: 1.1s; }
+    .social-links { animation-delay: 1.3s; }
+  </style>
+</head>
+<body>
+
+  <div class="coming-soon">
+    <div class="logo-container">
+      <img src="images/logo-primary-cdn.png" alt="The Franklin Butchery">
+    </div>
+
+    <div class="divider"></div>
+
+    <h1>Coming Soon</h1>
+
+    <p class="tagline">An elevated neighborhood butcher shop</p>
+
+    <p class="description">
+      Hand-cut meats. Fresh seafood. Gourmet sandwiches.
+      Chef-driven meals to go. All locally sourced with the care and quality
+      Franklin deserves.
+    </p>
+
+    <div class="details">
+      <span>129 2nd Avenue North &middot; Franklin, TN 37064</span>
+      <span>Open Daily &middot; 11 AM – 8 PM</span>
+      <a href="mailto:family@franklinbutchery.com">family@franklinbutchery.com</a>
+      <a href="tel:+16157217790">(615) 721-7790</a>
+    </div>
+
+    <div class="social-links">
+      <a href="https://www.instagram.com/thefranklinbutchery/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/thefranklinbutchery/" target="_blank" rel="noopener">Facebook</a>
+    </div>
+
+    <div class="subscribe-section">
+      <h2>Stay in the Know</h2>
+      <div id="mc_embed_shell">
+        <div id="mc_embed_signup">
+          <form action="https://franklinbutchery.us14.list-manage.com/subscribe/post?u=04cfa54c9a9df02deb8c615a5&amp;id=2e99f601e4&amp;f_id=00359ce1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate subscribe-form" target="_self" novalidate="">
+            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+            <div class="mc-field-group">
+              <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+              <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="" placeholder="Your email address">
+            </div>
+            <div id="mce-responses" class="clear">
+              <div class="response" id="mce-error-response" style="display: none;"></div>
+              <div class="response" id="mce-success-response" style="display: none;"></div>
+            </div>
+            <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_04cfa54c9a9df02deb8c615a5_2e99f601e4" tabindex="-1" value=""></div>
+            <input type="submit" name="subscribe" id="mc-embedded-subscribe" value="Subscribe">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2026 The Franklin Butchery. All rights reserved.
+  </footer>
+
+</body>
+</html>
