@@ -771,6 +771,34 @@ body::before {
   line-height: 1.25;
 }
 
+/* Disabled pillar card (e.g. Beer & Wine pending license) */
+.tfb-pillar--disabled {
+  pointer-events: none;
+  cursor: default;
+  position: relative;
+}
+.tfb-pillar--disabled .tfb-pillar__img {
+  filter: grayscale(0.6) brightness(0.6);
+}
+.tfb-pillar--disabled .tfb-pillar__label {
+  opacity: 0.5;
+}
+.tfb-pillar__badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(29, 40, 62, 0.85);
+  color: var(--tfb-gold);
+  font-family: var(--tfb-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 3px;
+  border: 1px solid rgba(200, 169, 110, 0.3);
+}
+
 /* ══════════════════════════════════════
    CONTENT SECTIONS (2-up split layout)
    ══════════════════════════════════════ */
