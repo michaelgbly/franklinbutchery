@@ -219,11 +219,13 @@
     </ul>
     <div class="tfb-footer__email-signup">
       <label class="tfb-footer__email-label" for="tfb-email-input">Join Our List</label>
-      <form class="tfb-footer__email-form" action="https://franklinbutchery.us14.list-manage.com/subscribe/post?u=04cfa54c9a9df02deb8c615a5&amp;id=2e99f601e4&amp;f_id=00359ce1f0" method="post" target="_blank">
+      <form class="tfb-footer__email-form" id="tfb-footer-subscribe" action="https://franklinbutchery.us14.list-manage.com/subscribe/post-json?u=04cfa54c9a9df02deb8c615a5\&amp;id=2e99f601e4\&amp;f_id=00359ce1f0\&amp;c=tfbMailchimpCB" method="get">
         <input id="tfb-email-input" class="tfb-footer__email-input" type="email" name="EMAIL" placeholder="your@email.com" aria-label="Email address" required>
         <div style="position:absolute;left:-5000px;" aria-hidden="true"><input type="text" name="b_04cfa54c9a9df02deb8c615a5_2e99f601e4" tabindex="-1" value=""></div>
         <button class="tfb-footer__email-btn" type="submit">Join</button>
       </form>
+      <p class="tfb-footer__email-success" id="tfb-email-success" style="display:none;">Thanks for subscribing!</p>
+      <p class="tfb-footer__email-error" id="tfb-email-error" style="display:none;"></p>
     </div>
     <p class="tfb-footer__copy">&copy; 2026 The Franklin Butchery. All rights reserved.</p>
   </div>

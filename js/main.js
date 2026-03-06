@@ -370,4 +370,57 @@
     }
   });
 
+  // ── Footer Mailchimp JSONP Subscribe ──
+  var footerForm = document.getElementById('tfb-footer-subscribe');
+  if (footerForm) {
+    footerForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var emailInput = footerForm.querySelector('input[name="EMAIL"]');
+      var email = emailInput.value.trim();
+      if (!email) return;
+
+      var successEl = document.getElementById('tfb-email-success');
+      var errorEl   = document.getElementById('tfb-email-error');
+      var btn       = footerForm.querySelector('.tfb-footer__email-btn');
+
+      // Reset states
+      successEl.style.display = 'none';
+      errorEl.style.display   = 'none';
+      btn.textContent = '...';
+
+      // Build JSONP URL
+      var baseUrl = footerForm.action;
+      var url = baseUrl + '&EMAIL=' + encodeURIComponent(email);
+
+      // JSONP callback
+      window.tfbMailchimpCB = function(data) {
+        if (data.result === 'success') {
+          footerForm.style.display = 'none';
+          successEl.style.display  = 'block';
+          successEl.textContent    = 'You\u2019re in! Thanks for subscribing.';
+        } else {
+          var msg = data.msg || 'Something went wrong. Please try again.';
+          if (msg.indexOf('already subscribed') > -1) {
+            footerForm.style.display = 'none';
+            successEl.style.display  = 'block';
+            successEl.textContent    = 'You\u2019re already on the list!';
+          } else {
+            errorEl.style.display = 'block';
+            errorEl.textContent   = msg.replace(/<[^>]*>/g, '');
+            btn.textContent = 'Join';
+          }
+        }
+        var s = document.getElementById('tfb-mc-jsonp');
+        if (s) s.parentNode.removeChild(s);
+      };
+
+      var old = document.getElementById('tfb-mc-jsonp');
+      if (old) old.parentNode.removeChild(old);
+      var script  = document.createElement('script');
+      script.id   = 'tfb-mc-jsonp';
+      script.src  = url;
+      document.body.appendChild(script);
+    });
+  }
+
 })();
