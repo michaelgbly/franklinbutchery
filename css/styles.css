@@ -1484,8 +1484,13 @@ body::before {
   background: var(--tfb-gold);
   color: var(--tfb-charcoal);
 }
-.tfb-butcher-tab:hover:not(.active) {
+.tfb-butcher-tab:hover:not(.active):not(.disabled) {
   background: rgba(200, 169, 110, 0.1);
+}
+.tfb-butcher-tab.disabled {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
 }
 .tfb-butcher-panel {
   display: none;
