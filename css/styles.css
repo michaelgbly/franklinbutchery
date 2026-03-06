@@ -189,6 +189,11 @@ body::before {
   outline: 2px solid var(--tfb-gold);
   outline-offset: 2px;
 }
+#tfb-mini-nav .tfb-nav-pill--disabled {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+}
 #tfb-mini-nav .tfb-nav-pill.active {
   background: rgba(200, 169, 110, 0.15);
   border-color: var(--tfb-gold);
