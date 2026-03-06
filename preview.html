@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TFB Preview — Responsive Breakpoints</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #111;
+      color: #FAF7F2;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 14px 24px;
+      background: #1A1A1A;
+      border-bottom: 1px solid rgba(200, 169, 110, 0.2);
+      flex-shrink: 0;
+    }
+
+    .toolbar__label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #7A7368;
+      margin-right: 8px;
+    }
+
+    .toolbar__btn {
+      padding: 10px 24px;
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: transparent;
+      color: #C8A96E;
+      border: 1px solid #C8A96E;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .toolbar__btn:hover {
+      background: rgba(200, 169, 110, 0.1);
+    }
+
+    .toolbar__btn.active {
+      background: #C8A96E;
+      color: #1A1A1A;
+    }
+
+    .toolbar__size {
+      font-size: 11px;
+      color: #7A7368;
+      margin-left: 12px;
+      min-width: 80px;
+    }
+
+    .toolbar__page-group {
+      margin-left: 32px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .toolbar__select {
+      padding: 8px 12px;
+      font-family: inherit;
+      font-size: 12px;
+      background: #111;
+      color: #FAF7F2;
+      border: 1px solid #3D3832;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .preview-area {
+      flex: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 24px;
+      overflow: auto;
+      background: #0a0a0a;
+    }
+
+    .frame-wrapper {
+      background: #fff;
+      box-shadow: 0 4px 40px rgba(0,0,0,0.5);
+      transition: width 0.4s ease, height 0.3s ease;
+      position: relative;
+      height: calc(100vh - 100px);
+    }
+
+    .frame-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .frame-wrapper::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #C8A96E, #D4BB88);
+    }
+  </style>
+</head>
+<body>
+
+<div class="toolbar">
+  <span class="toolbar__label">Breakpoint</span>
+  <button class="toolbar__btn" data-width="375" data-label="Mobile">Mobile</button>
+  <button class="toolbar__btn" data-width="768" data-label="Tablet">Tablet</button>
+  <button class="toolbar__btn active" data-width="1440" data-label="Desktop">Desktop</button>
+  <span class="toolbar__size" id="sizeLabel">1440px</span>
+
+  <div class="toolbar__page-group">
+    <span class="toolbar__label">Page</span>
+    <select class="toolbar__select" id="pageSelect">
+      <option value="site/index.html">Home</option>
+      <option value="site/butcher-case.html">Butcher Case</option>
+      <option value="site/seafood.html">Seafood</option>
+      <option value="site/sandwiches.html">Sandwiches</option>
+      <option value="site/beer-wine.html">Beer & Wine</option>
+      <option value="site/meals-to-go.html">Meals To Go</option>
+      <option value="site/menu.html">Menu</option>
+      <option value="site/team.html">Team</option>
+      <option value="site/contact.html">Contact</option>
+      <option value="site/404.html">404 Page</option>
+    </select>
+  </div>
+</div>
+
+<div class="preview-area">
+  <div class="frame-wrapper" id="frameWrapper" style="width: 1440px;">
+    <iframe id="previewFrame" src="site/index.html"></iframe>
+  </div>
+</div>
+
+<script>
+  const buttons = document.querySelectorAll('.toolbar__btn');
+  const wrapper = document.getElementById('frameWrapper');
+  const sizeLabel = document.getElementById('sizeLabel');
+  const pageSelect = document.getElementById('pageSelect');
+  const iframe = document.getElementById('previewFrame');
+
+  buttons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      buttons.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var w = btn.getAttribute('data-width');
+      wrapper.style.width = w + 'px';
+      sizeLabel.textContent = w + 'px';
+    });
+  });
+
+  pageSelect.addEventListener('change', function() {
+    iframe.src = pageSelect.value;
+  });
+</script>
+
+</body>
+</html>
