@@ -129,6 +129,15 @@ body::before {
   border-bottom: 1px solid rgba(200, 169, 110, 0.15);
   padding: env(safe-area-inset-top, 0) 32px 0 32px;
 }
+#tfb-mini-nav::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: #1D283E;
+}
 #tfb-mini-nav .tfb-nav-inner {
   max-width: 1200px;
   margin: 0 auto;
