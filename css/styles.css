@@ -127,9 +127,7 @@ body::before {
   left: 0;
   right: 0;
   z-index: 9998;
-  background: rgba(29, 40, 62, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: #1D283E;
   border-bottom: 1px solid rgba(200, 169, 110, 0.15);
   padding: env(safe-area-inset-top, 0) 32px 0 32px;
 }
