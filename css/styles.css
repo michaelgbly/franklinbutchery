@@ -16,7 +16,6 @@ html, body {
   padding: 0;
   width: 100%;
   overflow-x: hidden;
-  overscroll-behavior-y: none;
 }
 
 /* ── Brand Tokens ── */
