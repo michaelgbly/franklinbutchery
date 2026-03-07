@@ -80,6 +80,21 @@
   }
 
   /* ══════════════════════════════════════
+     LAZY IMAGE FADE-IN
+     ══════════════════════════════════════ */
+  if (!prefersReduced) {
+    document.querySelectorAll('img[loading="lazy"]').forEach(function(img) {
+      if (img.complete) {
+        img.classList.add('tfb-loaded');
+      } else {
+        img.addEventListener('load', function() {
+          img.classList.add('tfb-loaded');
+        });
+      }
+    });
+  }
+
+  /* ══════════════════════════════════════
      SCROLL REVEAL (IntersectionObserver)
      ══════════════════════════════════════ */
   var revealEls = document.querySelectorAll('.tfb-reveal');
