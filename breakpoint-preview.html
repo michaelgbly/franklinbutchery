@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TFB Sandbox — Breakpoint Preview</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #1a1a1a;
+      color: #e0e0e0;
+      min-height: 100vh;
+    }
+
+    /* ── Top bar ── */
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #111;
+      border-bottom: 1px solid #333;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .toolbar h1 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      margin-right: auto;
+      white-space: nowrap;
+    }
+
+    .toolbar label {
+      font-size: 13px;
+      color: #aaa;
+      white-space: nowrap;
+    }
+
+    .toolbar select,
+    .toolbar button {
+      font-size: 13px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid #444;
+      background: #222;
+      color: #e0e0e0;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .toolbar select:hover,
+    .toolbar button:hover {
+      background: #333;
+      border-color: #666;
+    }
+
+    .toolbar button.active {
+      background: #b8860b;
+      border-color: #b8860b;
+      color: #fff;
+    }
+
+    .view-toggle {
+      display: flex;
+      gap: 4px;
+    }
+
+    .view-toggle button {
+      border-radius: 6px;
+    }
+
+    /* ── Layout modes ── */
+    .preview-container {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      padding: 24px;
+      overflow-x: auto;
+      min-height: calc(100vh - 56px);
+    }
+
+    .preview-container.stacked {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ── Individual frame wrapper ── */
+    .frame-wrapper {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .frame-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #ccc;
+    }
+
+    .frame-label .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .frame-label .dot.desktop { background: #4caf50; }
+    .frame-label .dot.tablet  { background: #ff9800; }
+    .frame-label .dot.mobile  { background: #2196f3; }
+
+    .frame-label .dims {
+      font-weight: 400;
+      color: #888;
+    }
+
+    /* ── Device chrome ── */
+    .device-chrome {
+      background: #222;
+      border: 1px solid #444;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+
+    .device-chrome .browser-bar {
+      background: #2a2a2a;
+      border-bottom: 1px solid #444;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .browser-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .browser-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .browser-dots span:nth-child(1) { background: #ff5f57; }
+    .browser-dots span:nth-child(2) { background: #ffbd2e; }
+    .browser-dots span:nth-child(3) { background: #28c840; }
+
+    .url-bar {
+      flex: 1;
+      background: #1a1a1a;
+      border: 1px solid #444;
+      border-radius: 4px;
+      padding: 4px 10px;
+      font-size: 11px;
+      color: #888;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .device-chrome iframe {
+      display: block;
+      border: none;
+      background: #fff;
+    }
+
+    /* ── Responsive adjustments for the preview tool itself ── */
+    @media (max-width: 1200px) {
+      .preview-container:not(.stacked) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="toolbar">
+  <h1>TFB Breakpoint Preview</h1>
+
+  <label>Page:</label>
+  <select id="pageSelect">
+    <option value="index.html">Homepage</option>
+    <option value="butcher-case.html">Butcher Case</option>
+    <option value="seafood.html">Seafood</option>
+    <option value="sandwiches.html">Sandwiches</option>
+    <option value="meals-to-go.html">Meals To Go</option>
+    <option value="beer-wine.html">Beer & Wine</option>
+    <option value="merch.html">Merch</option>
+    <option value="team.html">Our Story</option>
+    <option value="contact.html">Contact</option>
+  </select>
+
+  <label>Height:</label>
+  <select id="heightSelect">
+    <option value="700">700px</option>
+    <option value="900" selected>900px</option>
+    <option value="1200">1200px</option>
+    <option value="full">Full page</option>
+  </select>
+
+  <div class="view-toggle">
+    <button id="btnSide" class="active" onclick="setLayout('side')">Side by Side</button>
+    <button id="btnStack" onclick="setLayout('stacked')">Stacked</button>
+  </div>
+
+  <div class="view-toggle">
+    <button id="btnAll" class="active" onclick="setVisible('all')">All 3</button>
+    <button id="btnDesktop" onclick="setVisible('desktop')">Desktop</button>
+    <button id="btnTablet" onclick="setVisible('tablet')">Tablet</button>
+    <button id="btnMobile" onclick="setVisible('mobile')">Mobile</button>
+  </div>
+</div>
+
+<div class="preview-container" id="previewContainer">
+
+  <!-- Desktop: 1440px wide -->
+  <div class="frame-wrapper" data-bp="desktop" id="wrapDesktop">
+    <div class="frame-label">
+      <span class="dot desktop"></span>
+      Desktop
+      <span class="dims">1440 x <span class="h-val">900</span>px</span>
+    </div>
+    <div class="device-chrome">
+      <div class="browser-bar">
+        <div class="browser-dots"><span></span><span></span><span></span></div>
+        <div class="url-bar" id="urlDesktop">franklinbutchery.com</div>
+      </div>
+      <iframe id="frameDesktop" width="1440" height="900"></iframe>
+    </div>
+  </div>
+
+  <!-- Tablet: 1023px wide -->
+  <div class="frame-wrapper" data-bp="tablet" id="wrapTablet">
+    <div class="frame-label">
+      <span class="dot tablet"></span>
+      Tablet
+      <span class="dims">1023 x <span class="h-val">900</span>px</span>
+    </div>
+    <div class="device-chrome">
+      <div class="browser-bar">
+        <div class="browser-dots"><span></span><span></span><span></span></div>
+        <div class="url-bar" id="urlTablet">franklinbutchery.com</div>
+      </div>
+      <iframe id="frameTablet" width="1023" height="900"></iframe>
+    </div>
+  </div>
+
+  <!-- Mobile: 390px wide -->
+  <div class="frame-wrapper" data-bp="mobile" id="wrapMobile">
+    <div class="frame-label">
+      <span class="dot mobile"></span>
+      Mobile
+      <span class="dims">390 x <span class="h-val">900</span>px</span>
+    </div>
+    <div class="device-chrome">
+      <div class="browser-bar">
+        <div class="browser-dots"><span></span><span></span><span></span></div>
+        <div class="url-bar" id="urlMobile">franklinbutchery.com</div>
+      </div>
+      <iframe id="frameMobile" width="390" height="900"></iframe>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const frames   = ['frameDesktop', 'frameTablet', 'frameMobile'];
+  const urls     = ['urlDesktop', 'urlTablet', 'urlMobile'];
+  const wrappers = ['wrapDesktop', 'wrapTablet', 'wrapMobile'];
+  const hLabels  = document.querySelectorAll('.h-val');
+
+  // ── Load page into all iframes ──
+  function loadPage(page) {
+    frames.forEach((id, i) => {
+      const f = document.getElementById(id);
+      f.src = page;
+      document.getElementById(urls[i]).textContent = 'franklinbutchery.com/' + (page === 'index.html' ? '' : page);
+    });
+  }
+
+  // ── Page selector ──
+  document.getElementById('pageSelect').addEventListener('change', function() {
+    loadPage(this.value);
+  });
+
+  // ── Height selector ──
+  document.getElementById('heightSelect').addEventListener('change', function() {
+    const val = this.value;
+    frames.forEach(id => {
+      const f = document.getElementById(id);
+      if (val === 'full') {
+        f.style.height = '2400px';
+        hLabels.forEach(l => l.textContent = '2400');
+      } else {
+        f.style.height = val + 'px';
+        hLabels.forEach(l => l.textContent = val);
+      }
+    });
+  });
+
+  // ── Layout toggle ──
+  function setLayout(mode) {
+    const container = document.getElementById('previewContainer');
+    document.getElementById('btnSide').classList.toggle('active', mode === 'side');
+    document.getElementById('btnStack').classList.toggle('active', mode === 'stacked');
+    if (mode === 'stacked') {
+      container.classList.add('stacked');
+    } else {
+      container.classList.remove('stacked');
+    }
+  }
+
+  // ── Visibility toggle ──
+  function setVisible(which) {
+    ['btnAll','btnDesktop','btnTablet','btnMobile'].forEach(id => {
+      document.getElementById(id).classList.remove('active');
+    });
+    document.getElementById('btn' + which.charAt(0).toUpperCase() + which.slice(1)).classList.add('active');
+
+    wrappers.forEach((id, i) => {
+      const bp = document.getElementById(id).dataset.bp;
+      document.getElementById(id).style.display = (which === 'all' || which === bp) ? '' : 'none';
+    });
+  }
+
+  // ── Scale frames to fit when in side-by-side ──
+  function autoScale() {
+    const container = document.getElementById('previewContainer');
+    const isStacked = container.classList.contains('stacked');
+
+    if (isStacked) {
+      // In stacked mode, scale each to fit viewport width
+      wrappers.forEach(id => {
+        const wrapper = document.getElementById(id);
+        const iframe = wrapper.querySelector('iframe');
+        const iframeWidth = parseInt(iframe.width);
+        const availWidth = window.innerWidth - 80;
+        const scale = Math.min(1, availWidth / iframeWidth);
+        const chrome = wrapper.querySelector('.device-chrome');
+        chrome.style.transform = `scale(${scale})`;
+        chrome.style.transformOrigin = 'top center';
+        chrome.style.marginBottom = scale < 1 ? `-${(1 - scale) * (parseInt(iframe.style.height || iframe.height) + 40)}px` : '0';
+      });
+    } else {
+      // In side-by-side, scale to fit all visible frames
+      const visibleWrappers = wrappers.filter(id => document.getElementById(id).style.display !== 'none');
+      const totalNativeWidth = visibleWrappers.reduce((sum, id) => {
+        const iframe = document.getElementById(id).querySelector('iframe');
+        return sum + parseInt(iframe.width) + 26; // 26 for chrome border
+      }, 0);
+      const gaps = (visibleWrappers.length - 1) * 24;
+      const padding = 48;
+      const availWidth = window.innerWidth - padding;
+      const scale = Math.min(1, availWidth / (totalNativeWidth + gaps));
+
+      wrappers.forEach(id => {
+        const wrapper = document.getElementById(id);
+        const chrome = wrapper.querySelector('.device-chrome');
+        const iframe = wrapper.querySelector('iframe');
+        chrome.style.transform = `scale(${scale})`;
+        chrome.style.transformOrigin = 'top left';
+        if (scale < 1) {
+          const nativeH = parseInt(iframe.style.height || iframe.height) + 40;
+          const nativeW = parseInt(iframe.width) + 2;
+          chrome.style.marginBottom = `-${(1 - scale) * nativeH}px`;
+          chrome.style.marginRight = `-${(1 - scale) * nativeW}px`;
+        } else {
+          chrome.style.marginBottom = '0';
+          chrome.style.marginRight = '0';
+        }
+      });
+    }
+  }
+
+  window.addEventListener('resize', autoScale);
+
+  // Override setLayout and setVisible to trigger rescale
+  const origLayout = setLayout;
+  setLayout = function(mode) { origLayout(mode); setTimeout(autoScale, 50); };
+  const origVisible = setVisible;
+  setVisible = function(w) { origVisible(w); setTimeout(autoScale, 50); };
+
+  // ── Init ──
+  loadPage('index.html');
+  setTimeout(autoScale, 100);
+</script>
+
+</body>
+</html>

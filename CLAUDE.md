@@ -105,6 +105,41 @@ and cooking methods. End with: "Want this tailored to grill vs. oven vs. smoker?
 
 ---
 
+## People
+
+| Who | Role |
+|-----|------|
+| **Greg** | Co-owner, business/operations side |
+| **Lori** | Co-owner (Greg's wife), brand & experience |
+| **Carlos** / **Carl** | Head Butcher, Partner (Aubrey's husband) |
+| **Aubrey** | Carlos's wife, friends with Lori |
+→ Profiles: `memory/people/`
+
+## Suppliers
+
+| Name | What |
+|------|------|
+| **Bear Creek Farm** | Beef & pork; pasture-raised, grain-finished; ~2 cows/week |
+| **Simpsons** | Secondary cattle; ~half cow/week |
+| **Springer Mountain** | Premium poultry; TN/GA |
+→ Full sourcing: `memory/glossary.md`
+
+## Key Context (From Owner Interview)
+
+- First-impression goal: "Damn, this is cool" — unexpected, unique
+- "Elevated experience" preferred over "upscale" or "high-end"
+- Meals To Go is a major pillar — refrigerated, chef-driven, reheat at home
+- Cooked-to-order capability exists but is NOT advertised (organic discovery)
+- More women buying meat than expected — experience designed to appeal broadly
+- Sandwich names based on the owners' children
+- Private dining: inquiry-based events, not reservations
+- Supper clubs: slow launch, announced via Instagram/email
+- Education content planned: YouTube/Instagram shorts with Carlos + chef Greg
+→ Full interview insights: `memory/context/owner-interview-insights.md`
+→ Raw transcript: `memory/context/owner-interview-transcript.md`
+
+---
+
 ## Key Files in This Repo
 
 | File | Purpose |
@@ -112,3 +147,6 @@ and cooking methods. End with: "Want this tailored to grill vs. oven vs. smoker?
 | `CLAUDE.md` | This file — routing-level project memory |
 | `.claude/rules/tfb-concierge.md` | Full brand rules & behavior guide |
 | `docs/brand/TFB_Concierge_Playbook.md` | Human-friendly playbook reference |
+| `memory/glossary.md` | Full glossary — people, terms, suppliers, brand language |
+| `memory/people/` | Individual profiles (Greg, Lori, Carlos) |
+| `memory/context/` | Owner interview transcript + structured insights |
