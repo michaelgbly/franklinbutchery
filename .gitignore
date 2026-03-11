@@ -15,3 +15,10 @@ Franklin Butchery/
 
 # Preview tools (local only)
 preview-responsive.html
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
