@@ -114,8 +114,9 @@
   /* ── Product List ── */
   .tfb-product-list {
     list-style: none;
-    padding: 0;
-    margin: 0;
+    padding: 0 24px;
+    margin: 0 auto;
+    max-width: 680px;
     columns: 2;
     column-gap: 64px;
     text-align: left;
@@ -130,10 +131,16 @@
     break-inside: avoid;
   }
 
+  /* ── Tablet ── */
+  @media (max-width: 1024px) {
+    .tfb-section { padding: 100px 48px; }
+    .tfb-product-list { column-gap: 48px; padding: 0 32px; }
+  }
+
   /* ── Mobile ── */
   @media (max-width: 768px) {
     .tfb-section { padding: 80px 24px; }
-    .tfb-product-list { columns: 2; column-gap: 32px; }
+    .tfb-product-list { columns: 2; column-gap: 32px; padding: 0 16px; }
     .tfb-butcher-tabs {
       justify-content: center;
       border: none;
